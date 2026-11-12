@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Lume Clean – Professional Cleaning Services in Dagenham</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FDF8EE',
+            'cream-dark': '#F5EDD8',
+            gold: '#B8860B',
+            'gold-light': '#D4A017',
+            'gold-bright': '#C9941A',
+            'gold-pale': '#F0E0A0',
+            brown: '#5C3A0A',
+            'brown-dark': '#3D2200',
+          },
+          fontFamily: {
+            script: ['Great Vibes', 'cursive'],
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --gold: #C9941A;
+      --cream: #FDF8EE;
+      --brown: #5C3A0A;
+      --brown-dark: #3D2200;
+    }
+    * { box-sizing: border-box; }
+    body { background-color: var(--cream); font-family: 'Inter', sans-serif; color: #3D2200; }
+    html { scroll-behavior: smooth; }
+
+    /* ── GLOBAL TEXT VISIBILITY ── */
+    p { color: #4a2e08; }
+    .text-brown\/60  { color: #5C3A0Acc !important; }
+    .text-brown\/65  { color: #5C3A0Acf !important; }
+    .text-brown\/70  { color: #5C3A0Ab3 !important; }
+    .text-brown\/75  { color: #5C3A0Abd !important; }
+    .text-brown\/80  { color: #5C3A0Acc !important; }
+    .text-cream\/55  { color: #FDF8EE9e !important; }
+    .text-cream\/60  { color: #FDF8EEaa !important; }
+    .text-cream\/70  { color: #FDF8EEb3 !important; }
+    .text-cream\/75  { color: #FDF8EEbf !important; }
+
+    .gold-text {
+      background: linear-gradient(135deg, #B8860B 0%, #D4A017 45%, #C9941A 70%, #8B6508 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #C9941A, #D4A017);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 9999px;
+      transition: filter 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(180,130,10,0.3);
+      display: inline-block;
+      text-align: center;
+    }
+    .btn-gold:hover { filter: brightness(1.08); box-shadow: 0 6px 20px rgba(180,130,10,0.42); }
+    .btn-outline {
+      border: 2px solid var(--gold);
+      color: var(--brown);
+      font-weight: 600;
+      border-radius: 9999px;
+      transition: all 0.2s;
+      display: inline-block;
+      text-align: center;
+    }
+    .btn-outline:hover { background: var(--gold); color: #fff; }
+
+    /* NAV */
+    .nav-link {
+      position: relative;
+      color: var(--brown-dark);
+      font-weight: 500;
+      font-size: 0.925rem;
+      transition: color 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width 0.25s ease;
+    }
+    .nav-link:hover { color: var(--gold); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* HERO */
+    .hero-section {
+      background-image: url('hero-bg.jpg');
+      background-size: cover;
+      background-position: center right;
+      background-repeat: no-repeat;
+      min-height: 90vh;
+    }
+
+    /* sparkle */
+    .sparkle {
+      position: absolute;
+      pointer-events: none;
+      color: #D4A017;
+      opacity: 0.7;
+      animation: twinkle 3.5s ease-in-out infinite;
+    }
+    @keyframes twinkle {
+      0%,100% { opacity: 0.3; transform: scale(0.9); }
+      50%      { opacity: 0.9; transform: scale(1.3); }
+    }
+
+    /* ── MODERN CARDS — no lift, just border+shadow glow ── */
+    .service-card {
+      transition: box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .service-card:hover {
+      box-shadow: 0 0 0 2px #C9941A44, 0 8px 28px rgba(180,130,10,0.14);
+    }
+
+    /* about feature rows */
+    .feature-row {
+      transition: box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .feature-row:hover {
+      box-shadow: 0 0 0 1.5px #C9941A33, 0 6px 20px rgba(180,130,10,0.09);
+      border-color: #C9941A55 !important;
+    }
+
+    /* who-we-serve tiles */
+    .serve-tile {
+      transition: box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .serve-tile:hover {
+      box-shadow: 0 0 0 1.5px #C9941A44, 0 4px 16px rgba(180,130,10,0.1);
+      border-color: #C9941A66 !important;
+    }
+
+    /* mobile nav */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    /* section heading underline */
+    .section-heading::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #C9941A, #D4A017);
+      margin-top: 10px;
+      border-radius: 2px;
+    }
+    .section-heading.center::after { margin: 10px auto 0; }
+
+    /* FAQ */
+    .faq-answer { display: none; }
+    .faq-answer.open { display: block; }
+    .faq-icon { transition: transform 0.3s; }
+    .faq-btn.open .faq-icon { transform: rotate(45deg); }
+
+    /* footer divider */
+    .footer-divider {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #C9941A 30%, #D4A017 50%, #C9941A 70%, transparent);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sparkle { animation: none; }
+      .btn-gold, .btn-outline, .service-card { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVBAR
+══════════════════════════════════ -->
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm shadow-sm">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 flex-shrink-0">
+        <div class="leading-tight">
+          <span class="gold-text leading-none" style="font-family:'Great Vibes',cursive; font-size:2rem;">Lume Clean</span>
+          <span class="block text-[9px] text-gold-bright tracking-[0.2em] uppercase font-sans font-semibold -mt-1 pl-0.5">Dagenham</span>
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex items-center gap-7">
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#pricing" class="nav-link">Prices</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Desktop right -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="tel:07522049953" class="flex items-center gap-2 text-brown-dark font-medium text-sm hover:text-gold transition-colors">
+          <i class="fa-solid fa-phone text-gold text-sm"></i>
+          07522 049 953
+        </a>
+        <a href="#contact" class="btn-gold px-5 py-2.5 text-sm">Get a Free Quote</a>
+      </div>
+
+      <!-- Mobile right -->
+      <div class="flex md:hidden items-center gap-3">
+        <a href="tel:07522049953" class="text-brown text-xs font-medium flex items-center gap-1.5">
+          <i class="fa-solid fa-phone text-gold text-xs"></i>07522 049 953
+        </a>
+        <button id="hamburger" class="text-brown p-1" aria-label="Toggle menu">
+          <i id="ham-icon" class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden border-t border-gold-pale pb-4">
+      <ul class="flex flex-col pt-2">
+        <li><a href="#" class="block px-2 py-2.5 text-brown font-medium text-sm hover:text-gold transition-colors">Home</a></li>
+        <li><a href="#services" class="block px-2 py-2.5 text-brown font-medium text-sm hover:text-gold transition-colors">Services</a></li>
+        <li><a href="#about" class="block px-2 py-2.5 text-brown font-medium text-sm hover:text-gold transition-colors">About</a></li>
+        <li><a href="#pricing" class="block px-2 py-2.5 text-brown font-medium text-sm hover:text-gold transition-colors">Prices</a></li>
+        <li><a href="#contact" class="block px-2 py-2.5 text-brown font-medium text-sm hover:text-gold transition-colors">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-gold mt-3 px-6 py-2.5 text-sm w-full">Get a Free Quote</a>
+    </div>
+  </nav>
+</header>
+
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section class="hero-section relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-r from-cream/92 via-cream/65 to-transparent pointer-events-none"></div>
+
+  <!-- sparkles -->
+  <span class="sparkle text-lg" style="top:20%;left:52%;animation-delay:0s">✦</span>
+  <span class="sparkle text-sm" style="top:58%;left:60%;animation-delay:1.3s">✦</span>
+  <span class="sparkle text-xs" style="top:33%;left:7%;animation-delay:2.1s">✦</span>
+  <span class="sparkle text-base" style="top:74%;left:16%;animation-delay:0.7s">✦</span>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center min-h-[90vh]">
+    <div class="max-w-lg py-24">
+
+      <p class="text-gold-bright font-semibold text-xs tracking-[0.18em] uppercase mb-4 font-sans">
+        Dagenham &amp; East London
+      </p>
+
+      <h1 class="font-serif font-bold leading-[1.05] text-brown-dark mb-5" style="font-family:'Cormorant Garamond',serif; font-size: clamp(2.6rem,5.5vw,4rem);">
+        Professional<br/>
+        <em class="gold-text not-italic">Cleaning Services</em><br/>
+        in Dagenham
+      </h1>
+
+      <p class="text-brown/75 text-base leading-relaxed mb-8 max-w-md font-sans">
+        Trusted local cleaners — fully insured, vetted &amp; dedicated to keeping your property spotless across East London.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="#contact" class="btn-gold px-7 py-3.5 text-sm">Get a Free Quote</a>
+        <a href="tel:07522049953" class="btn-outline px-7 py-3.5 text-sm flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone text-xs"></i> 07522 049 953
+        </a>
+      </div>
+
+      <!-- trust badges -->
+      <div class="flex flex-wrap gap-5 mt-8">
+        <span class="flex items-center gap-2 text-sm text-brown/65 font-medium">
+          <i class="fa-solid fa-shield-halved text-gold"></i> Fully Insured
+        </span>
+        <span class="flex items-center gap-2 text-sm text-brown/65 font-medium">
+          <i class="fa-solid fa-circle-check text-gold"></i> Vetted Team
+        </span>
+        <span class="flex items-center gap-2 text-sm text-brown/65 font-medium">
+          <i class="fa-solid fa-users text-gold"></i> Local &amp; Trusted
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     SERVICE CARDS (below hero)
+══════════════════════════════════ -->
+<section id="services-preview" class="bg-cream">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+
+      <div class="service-card bg-white rounded-2xl p-5 shadow-md flex flex-col gap-3 group border border-transparent hover:border-gold/20">
+        <div class="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all">
+          <i class="fa-solid fa-house text-gold group-hover:text-white text-sm transition-colors"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-brown-dark text-base md:text-lg leading-tight" style="font-family:'Cormorant Garamond',serif;">Home Cleaning</h3>
+          <p class="text-gold-bright font-semibold text-[11px] uppercase tracking-wide mt-0.5">Trusted &amp; Insured</p>
+        </div>
+        <p class="text-brown text-sm leading-relaxed font-medium">Regular domestic cleaning — dusting, vacuuming, kitchens &amp; bathrooms.</p>
+        <a href="#services" class="text-gold text-xs font-semibold mt-auto flex items-center gap-1 hover:gap-2 transition-all">Read More <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+      </div>
+
+      <div class="service-card bg-white rounded-2xl p-5 shadow-md flex flex-col gap-3 group border border-transparent hover:border-gold/20">
+        <div class="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all">
+          <i class="fa-solid fa-key text-gold group-hover:text-white text-sm transition-colors"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-brown-dark text-base md:text-lg leading-tight" style="font-family:'Cormorant Garamond',serif;">End of Tenancy</h3>
+          <p class="text-brown font-semibold text-[11px] uppercase tracking-wide mt-0.5">Move-In Ready</p>
+        </div>
+        <p class="text-brown text-sm leading-relaxed font-medium">Thorough cleaning for landlords &amp; tenants before new occupants arrive.</p>
+        <a href="#services" class="text-gold text-xs font-semibold mt-auto flex items-center gap-1 hover:gap-2 transition-all">Read More <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+      </div>
+
+      <div class="service-card bg-white rounded-2xl p-5 shadow-md flex flex-col gap-3 group border border-gold/30 hover:border-gold/50">
+        <div class="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all">
+          <i class="fa-solid fa-building text-gold group-hover:text-white text-sm transition-colors"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-base md:text-lg leading-tight gold-text" style="font-family:'Cormorant Garamond',serif;">Office Cleaning</h3>
+          <p class="text-gold-bright font-semibold text-[11px] uppercase tracking-wide mt-0.5">Efficient Team</p>
+        </div>
+        <p class="text-brown text-sm leading-relaxed font-medium">Desks, floors, washrooms &amp; shared areas kept pristine for your team.</p>
+        <a href="#services" class="text-gold text-xs font-semibold mt-auto flex items-center gap-1 hover:gap-2 transition-all">Read More <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+      </div>
+
+      <div class="service-card bg-white rounded-2xl p-5 shadow-md flex flex-col gap-3 group border border-gold/30 hover:border-gold/50">
+        <div class="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all">
+          <i class="fa-brands fa-airbnb text-gold group-hover:text-white text-sm transition-colors"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-base md:text-lg leading-tight gold-text" style="font-family:'Cormorant Garamond',serif;">Airbnb Changeover</h3>
+          <p class="text-gold-bright font-semibold text-[11px] uppercase tracking-wide mt-0.5">Guest Ready</p>
+        </div>
+        <p class="text-brown text-sm leading-relaxed font-medium">Keep your short-term rental fresh &amp; guest-ready between every booking.</p>
+        <a href="#services" class="text-gold text-xs font-semibold mt-auto flex items-center gap-1 hover:gap-2 transition-all">Read More <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     WHY CHOOSE US STRIP
+══════════════════════════════════ -->
+<section class="bg-cream py-10 mt-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-sm border border-gold/10 px-6 md:px-10 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div class="border-b md:border-b-0 md:border-r border-gold/20 pb-6 md:pb-0 md:pr-6">
+        <h3 class="font-bold text-xl mb-4 text-brown-dark" style="font-family:'Cormorant Garamond',serif;">Why Choose Us</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-2.5 text-sm text-brown/80">
+            <i class="fa-solid fa-circle-check text-gold"></i>
+            <span>Call / Text: <a href="tel:07522049953" class="font-semibold text-brown-dark hover:text-gold transition-colors">07522 049 953</a></span>
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-brown/80">
+            <i class="fa-solid fa-circle-check text-gold"></i>
+            <span>Email: <a href="mailto:hello@lumeclean.co.uk" class="font-semibold text-brown-dark hover:text-gold transition-colors">hello@lumeclean.co.uk</a></span>
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-brown/80">
+            <i class="fa-solid fa-circle-check text-gold"></i>
+            <span>Dagenham &amp; East London</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="border-b md:border-b-0 md:border-r border-gold/20 pb-6 md:pb-0 md:pr-6">
+        <h3 class="font-bold text-xl mb-4 text-brown-dark" style="font-family:'Cormorant Garamond',serif;">Trusted &amp; Insured</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-center gap-2 text-sm text-brown"><span class="w-2 h-2 rounded-full bg-gold flex-shrink-0"></span>Fully insured &amp; vetted cleaning team</li>
+          <li class="flex items-center gap-2 text-sm text-brown"><span class="w-2 h-2 rounded-full bg-gold/40 flex-shrink-0"></span>Attention to every detail</li>
+          <li class="flex items-center gap-2 text-sm text-brown"><span class="w-2 h-2 rounded-full bg-gold/40 flex-shrink-0"></span>Backed by 7+ years experience</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col justify-between gap-4">
+        <div>
+          <h3 class="font-bold text-xl mb-4 text-brown-dark" style="font-family:'Cormorant Garamond',serif;">Get in Touch</h3>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-center gap-2 text-sm text-brown"><span class="w-2 h-2 rounded-full bg-gold/40 flex-shrink-0"></span>Consistent, reliable team</li>
+            <li class="flex items-center gap-2 text-sm text-brown"><span class="w-2 h-2 rounded-full bg-gold/40 flex-shrink-0"></span>Satisfaction promise</li>
+          </ul>
+          <div class="w-10 h-0.5 bg-gold/30 mb-3"></div>
+          <p class="text-sm text-brown/60">Send us your details and we'll get back to you quickly.</p>
+        </div>
+        <a href="#contact" class="btn-gold px-6 py-3 text-sm w-full sm:w-auto text-center">Send Us Your Details</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     ABOUT SECTION
+══════════════════════════════════ -->
+<section id="about" class="py-20 bg-cream">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+      <!-- Left: text -->
+      <div>
+        <p class="text-gold-bright font-semibold text-xs tracking-[0.18em] uppercase mb-3 font-sans">About Us</p>
+        <h2 class="section-heading font-bold text-brown-dark mb-6 leading-tight" style="font-family:'Cormorant Garamond',serif; font-size: clamp(1.9rem,3.5vw,2.6rem);">
+          Reliable Cleaning Company<br/><em class="not-italic gold-text">in Dagenham</em>
+        </h2>
+        <p class="text-brown text-base leading-relaxed mb-5">
+          Lume Clean Limited is a local cleaning company dedicated to providing dependable cleaning services for homes, rental properties and businesses across Dagenham and East London.
+        </p>
+        <p class="text-brown text-base leading-relaxed mb-6">
+          Operating as a sister company to <strong class="text-brown-dark">DSM City Construction Ltd</strong> — an established building and renovation business with over 7 years of experience — we bring the same commitment to quality, reliability and customer care to every clean.
+        </p>
+
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="bg-white rounded-xl p-4 border border-gold/15 shadow-sm">
+            <p class="text-3xl font-bold gold-text" style="font-family:'Cormorant Garamond',serif;">7+</p>
+            <p class="text-sm text-brown/65 mt-1">Years of Experience</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 border border-gold/15 shadow-sm">
+            <p class="text-3xl font-bold gold-text" style="font-family:'Cormorant Garamond',serif;">5</p>
+            <p class="text-sm text-brown/65 mt-1">Specialist Services</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 border border-gold/15 shadow-sm">
+            <p class="text-3xl font-bold gold-text" style="font-family:'Cormorant Garamond',serif;">100%</p>
+            <p class="text-sm text-brown/65 mt-1">Insured &amp; Vetted</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 border border-gold/15 shadow-sm">
+            <p class="text-3xl font-bold gold-text" style="font-family:'Cormorant Garamond',serif;">East</p>
+            <p class="text-sm text-brown/65 mt-1">London Coverage</p>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-gold px-7 py-3.5 text-sm">Request a Quote</a>
+      </div>
+
+      <!-- Right: feature list -->
+      <div class="space-y-5">
+        <div class="feature-row flex gap-4 items-start bg-white rounded-2xl p-5 shadow-sm border border-gold/10">
+          <div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-shield-halved text-gold"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-brown-dark mb-1" style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;">Fully Insured &amp; Vetted Team</h4>
+            <p class="text-brown text-sm leading-relaxed font-medium">Our cleaning staff are fully insured, vetted and background-checked, giving you greater peace of mind.</p>
+          </div>
+        </div>
+        <div class="feature-row flex gap-4 items-start bg-white rounded-2xl p-5 shadow-sm border border-gold/10">
+          <div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-building-columns text-gold"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-brown-dark mb-1" style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;">Backed by an Established Business</h4>
+            <p class="text-brown text-sm leading-relaxed font-medium">Sister company to DSM City Construction Ltd — 7+ years of trusted local service and reputation.</p>
+          </div>
+        </div>
+        <div class="feature-row flex gap-4 items-start bg-white rounded-2xl p-5 shadow-sm border border-gold/10">
+          <div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-magnifying-glass text-gold"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-brown-dark mb-1" style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;">Attention to Every Detail</h4>
+            <p class="text-brown text-sm leading-relaxed font-medium">We treat your home and workplace with the same care and respect as our own.</p>
+          </div>
+        </div>
+        <div class="feature-row flex gap-4 items-start bg-white rounded-2xl p-5 shadow-sm border border-gold/10">
+          <div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-rotate text-gold"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-brown-dark mb-1" style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;">Reliable, Flexible Solutions</h4>
+            <p class="text-brown text-sm leading-relaxed font-medium">One-off or regular appointments — we fit around your schedule and requirements.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     SERVICES FULL SECTION
+══════════════════════════════════ -->
+<section id="services" class="py-24 bg-cream-dark">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
+      <div>
+        <p class="text-gold-bright font-semibold text-xs tracking-[0.2em] uppercase mb-3">What We Offer</p>
+        <h2 class="font-bold text-brown-dark leading-tight" style="font-family:'Cormorant Garamond',serif; font-size: clamp(1.9rem,3.5vw,2.6rem);">
+          Our Professional<br/><em class="not-italic gold-text">Cleaning Services</em>
+        </h2>
+      </div>
+      <p class="text-brown/80 text-sm leading-relaxed max-w-xs md:text-right">From everyday household cleaning to specialist property services across East London.</p>
+    </div>
+
+    <!-- MNC-style cards grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Card 1 -->
+      <div class="mnc-card group relative bg-white rounded-3xl p-7 border border-stone-100 cursor-pointer overflow-hidden">
+        <!-- hover bg fill from bottom -->
+        <div class="mnc-fill absolute inset-0 rounded-3xl translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" style="background: linear-gradient(145deg,#3D2200,#6b3f0e);"></div>
+        <!-- content -->
+        <div class="relative z-10">
+          <div class="flex items-start justify-between mb-6">
+            <div class="w-13 h-13 rounded-2xl flex items-center justify-center" style="width:52px;height:52px;background:rgba(201,148,26,0.12);">
+              <i class="fa-solid fa-house text-gold text-xl group-hover:text-gold-light transition-colors duration-300"></i>
+            </div>
+            <span class="text-[11px] font-semibold tracking-widest uppercase text-brown/40 group-hover:text-cream/50 transition-colors duration-300">01</span>
+          </div>
+          <h3 class="font-bold text-brown-dark text-xl mb-3 group-hover:text-white transition-colors duration-300" style="font-family:'Cormorant Garamond',serif;">Regular Home Cleaning</h3>
+          <p class="text-brown/70 text-sm leading-relaxed mb-6 group-hover:text-cream/75 transition-colors duration-300">Dusting, vacuuming, mopping, kitchens &amp; bathrooms — a consistently clean home without the effort.</p>
+          <div class="flex items-center justify-between">
+            <a href="#contact" class="text-gold text-xs font-bold tracking-wide uppercase group-hover:text-gold-light transition-colors duration-300">Book Now</a>
+            <div class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold/60 group-hover:bg-gold/20 transition-all duration-300">
+              <i class="fa-solid fa-arrow-right text-gold text-[10px] group-hover:translate-x-0.5 transition-transform duration-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="mnc-card group relative bg-white rounded-3xl p-7 border border-stone-100 cursor-pointer overflow-hidden">
+        <div class="mnc-fill absolute inset-0 rounded-3xl translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" style="background: linear-gradient(145deg,#3D2200,#6b3f0e);"></div>
+        <div class="relative z-10">
+          <div class="flex items-start justify-between mb-6">
+            <div class="rounded-2xl flex items-center justify-center" style="width:52px;height:52px;background:rgba(201,148,26,0.12);">
+              <i class="fa-solid fa-spray-can-sparkles text-gold text-xl group-hover:text-gold-light transition-colors duration-300"></i>
+            </div>
+            <span class="text-[11px] font-semibold tracking-widest uppercase text-brown/40 group-hover:text-cream/50 transition-colors duration-300">02</span>
+          </div>
+          <h3 class="font-bold text-brown-dark text-xl mb-3 group-hover:text-white transition-colors duration-300" style="font-family:'Cormorant Garamond',serif;">Deep Cleaning Services</h3>
+          <p class="text-brown/70 text-sm leading-relaxed mb-6 group-hover:text-cream/75 transition-colors duration-300">Intensive clean targeting kitchens, bathrooms, floors &amp; hard-to-reach spaces — removing every trace of dirt and grime.</p>
+          <div class="flex items-center justify-between">
+            <a href="#contact" class="text-gold text-xs font-bold tracking-wide uppercase group-hover:text-gold-light transition-colors duration-300">Book Now</a>
+            <div class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold/60 group-hover:bg-gold/20 transition-all duration-300">
+              <i class="fa-solid fa-arrow-right text-gold text-[10px]"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="mnc-card group relative bg-white rounded-3xl p-7 border border-stone-100 cursor-pointer overflow-hidden">
+        <div class="mnc-fill absolute inset-0 rounded-3xl translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" style="background: linear-gradient(145deg,#3D2200,#6b3f0e);"></div>
+        <div class="relative z-10">
+          <div class="flex items-start justify-between mb-6">
+            <div class="rounded-2xl flex items-center justify-center" style="width:52px;height:52px;background:rgba(201,148,26,0.12);">
+              <i class="fa-solid fa-key text-gold text-xl group-hover:text-gold-light transition-colors duration-300"></i>
+            </div>
+            <span class="text-[11px] font-semibold tracking-widest uppercase text-brown/40 group-hover:text-cream/50 transition-colors duration-300">03</span>
+          </div>
+          <h3 class="font-bold text-brown-dark text-xl mb-3 group-hover:text-white transition-colors duration-300" style="font-family:'Cormorant Garamond',serif;">End of Tenancy Cleaning</h3>
+          <p class="text-brown/70 text-sm leading-relaxed mb-6 group-hover:text-cream/75 transition-colors duration-300">Move-in ready results for landlords, tenants &amp; letting agents — kitchens, bathrooms, floors and all surfaces covered.</p>
+          <div class="flex items-center justify-between">
+            <a href="#contact" class="text-gold text-xs font-bold tracking-wide uppercase group-hover:text-gold-light transition-colors duration-300">Book Now</a>
+            <div class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold/60 group-hover:bg-gold/20 transition-all duration-300">
+              <i class="fa-solid fa-arrow-right text-gold text-[10px]"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="mnc-card group relative bg-white rounded-3xl p-7 border border-stone-100 cursor-pointer overflow-hidden">
+        <div class="mnc-fill absolute inset-0 rounded-3xl translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" style="background: linear-gradient(145deg,#3D2200,#6b3f0e);"></div>
+        <div class="relative z-10">
+          <div class="flex items-start justify-between mb-6">
+            <div class="rounded-2xl flex items-center justify-center" style="width:52px;height:52px;background:rgba(201,148,26,0.12);">
+              <i class="fa-solid fa-building text-gold text-xl group-hover:text-gold-light transition-colors duration-300"></i>
+            </div>
+            <span class="text-[11px] font-semibold tracking-widest uppercase text-brown/40 group-hover:text-cream/50 transition-colors duration-300">04</span>
+          </div>
+          <h3 class="font-bold text-brown-dark text-xl mb-3 group-hover:text-white transition-colors duration-300" style="font-family:'Cormorant Garamond',serif;">Office Cleaning</h3>
+          <p class="text-brown/70 text-sm leading-relaxed mb-6 group-hover:text-cream/75 transition-colors duration-300">Desks, floors, washrooms &amp; shared areas kept pristine — a professional environment that reflects your business standards.</p>
+          <div class="flex items-center justify-between">
+            <a href="#contact" class="text-gold text-xs font-bold tracking-wide uppercase group-hover:text-gold-light transition-colors duration-300">Book Now</a>
+            <div class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold/60 group-hover:bg-gold/20 transition-all duration-300">
+              <i class="fa-solid fa-arrow-right text-gold text-[10px]"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="mnc-card group relative bg-white rounded-3xl p-7 border border-stone-100 cursor-pointer overflow-hidden">
+        <div class="mnc-fill absolute inset-0 rounded-3xl translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" style="background: linear-gradient(145deg,#3D2200,#6b3f0e);"></div>
+        <div class="relative z-10">
+          <div class="flex items-start justify-between mb-6">
+            <div class="rounded-2xl flex items-center justify-center" style="width:52px;height:52px;background:rgba(201,148,26,0.12);">
+              <i class="fa-brands fa-airbnb text-gold text-xl group-hover:text-gold-light transition-colors duration-300"></i>
+            </div>
+            <span class="text-[11px] font-semibold tracking-widest uppercase text-brown/40 group-hover:text-cream/50 transition-colors duration-300">05</span>
+          </div>
+          <h3 class="font-bold text-brown-dark text-xl mb-3 group-hover:text-white transition-colors duration-300" style="font-family:'Cormorant Garamond',serif;">Airbnb Changeover</h3>
+          <p class="text-brown/70 text-sm leading-relaxed mb-6 group-hover:text-cream/75 transition-colors duration-300">Guest-ready between every booking — fresh linen, spotless surfaces &amp; key areas prepared so every stay starts perfectly.</p>
+          <div class="flex items-center justify-between">
+            <a href="#contact" class="text-gold text-xs font-bold tracking-wide uppercase group-hover:text-gold-light transition-colors duration-300">Book Now</a>
+            <div class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold/60 group-hover:bg-gold/20 transition-all duration-300">
+              <i class="fa-solid fa-arrow-right text-gold text-[10px]"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA card — dark, no hover fill needed -->
+      <div class="relative rounded-3xl p-7 flex flex-col justify-between overflow-hidden" style="background: linear-gradient(145deg,#3D2200,#6b3f0e);">
+        <!-- subtle gold texture dots -->
+        <div class="absolute top-4 right-4 w-24 h-24 rounded-full opacity-5" style="background:radial-gradient(circle,#D4A017,transparent);"></div>
+        <div>
+          <i class="fa-solid fa-sparkles text-gold text-2xl mb-5"></i>
+          <h3 class="font-bold text-white text-xl mb-3" style="font-family:'Cormorant Garamond',serif;">Not Sure Which Service?</h3>
+          <p class="text-cream/80 text-sm leading-relaxed mb-7">Tell us about your property and we'll recommend the right cleaning solution for you.</p>
+        </div>
+        <a href="#contact" class="btn-gold px-6 py-3 text-sm text-center w-full">Get a Free Quote</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     WHO WE SERVE
+══════════════════════════════════ -->
+<section class="py-20 bg-cream">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14">
+      <p class="text-gold-bright font-semibold text-xs tracking-[0.18em] uppercase mb-3">Who We Help</p>
+      <h2 class="font-bold text-brown-dark" style="font-family:'Cormorant Garamond',serif; font-size: clamp(1.9rem,3.5vw,2.6rem);">
+        Cleaning Solutions for <em class="not-italic gold-text">Every Property</em>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div class="bg-white rounded-2xl p-5 text-center shadow-sm border border-gold/10 hover:border-gold/30 serve-tile transition-all">
+        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3">
+          <i class="fa-solid fa-house-user text-gold text-lg"></i>
+        </div>
+        <h4 class="font-bold text-brown-dark text-sm" style="font-family:'Cormorant Garamond',serif; font-size:1rem;">Homeowners</h4>
+        <p class="text-brown/55 text-xs mt-1 leading-relaxed">Regular domestic cleaning</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 text-center shadow-sm border border-gold/10 hover:border-gold/30 serve-tile transition-all">
+        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3">
+          <i class="fa-solid fa-person-walking-luggage text-gold text-lg"></i>
+        </div>
+        <h4 class="font-bold text-brown-dark text-sm" style="font-family:'Cormorant Garamond',serif; font-size:1rem;">Tenants</h4>
+        <p class="text-brown/55 text-xs mt-1 leading-relaxed">End of tenancy cleans</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 text-center shadow-sm border border-gold/10 hover:border-gold/30 serve-tile transition-all">
+        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3">
+          <i class="fa-solid fa-landmark text-gold text-lg"></i>
+        </div>
+        <h4 class="font-bold text-brown-dark text-sm" style="font-family:'Cormorant Garamond',serif; font-size:1rem;">Landlords</h4>
+        <p class="text-brown/55 text-xs mt-1 leading-relaxed">Between tenancy cleaning</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 text-center shadow-sm border border-gold/10 hover:border-gold/30 serve-tile transition-all">
+        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3">
+          <i class="fa-brands fa-airbnb text-gold text-lg"></i>
+        </div>
+        <h4 class="font-bold text-brown-dark text-sm" style="font-family:'Cormorant Garamond',serif; font-size:1rem;">Airbnb Hosts</h4>
+        <p class="text-brown/55 text-xs mt-1 leading-relaxed">Changeover cleaning</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 text-center shadow-sm border border-gold/10 hover:border-gold/30 serve-tile transition-all col-span-2 md:col-span-1">
+        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3">
+          <i class="fa-solid fa-briefcase text-gold text-lg"></i>
+        </div>
+        <h4 class="font-bold text-brown-dark text-sm" style="font-family:'Cormorant Garamond',serif; font-size:1rem;">Businesses</h4>
+        <p class="text-brown/55 text-xs mt-1 leading-relaxed">Office &amp; workspace cleaning</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     FAQ
+══════════════════════════════════ -->
+<section id="faq" class="py-20 bg-cream-dark">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-12">
+      <p class="text-gold-bright font-semibold text-xs tracking-[0.18em] uppercase mb-3">FAQs</p>
+      <h2 class="font-bold text-brown-dark" style="font-family:'Cormorant Garamond',serif; font-size: clamp(1.9rem,3.5vw,2.6rem);">
+        Frequently Asked <em class="not-italic gold-text">Questions</em>
+      </h2>
+    </div>
+
+    <div class="space-y-3" id="faq-list">
+
+      <div class="faq-item bg-white rounded-2xl border border-gold/10 overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left gap-4">
+          <span class="font-semibold text-brown-dark text-sm md:text-base">What cleaning services does Lume Clean provide?</span>
+          <i class="fa-solid fa-plus faq-icon text-gold flex-shrink-0"></i>
+        </button>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-brown text-sm leading-relaxed font-medium">We provide regular home cleaning, deep cleaning, end of tenancy cleaning, office cleaning and Airbnb changeover cleaning for residential and commercial properties across Dagenham and East London.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-2xl border border-gold/10 overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left gap-4">
+          <span class="font-semibold text-brown-dark text-sm md:text-base">Do you provide cleaning services in Dagenham?</span>
+          <i class="fa-solid fa-plus faq-icon text-gold flex-shrink-0"></i>
+        </button>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-brown text-sm leading-relaxed font-medium">Yes. We provide professional cleaning services in Dagenham and across East London and surrounding areas. Contact us to check availability in your location.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-2xl border border-gold/10 overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left gap-4">
+          <span class="font-semibold text-brown-dark text-sm md:text-base">Do you offer one-off and regular home cleaning?</span>
+          <i class="fa-solid fa-plus faq-icon text-gold flex-shrink-0"></i>
+        </button>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-brown text-sm leading-relaxed font-medium">Yes. We offer cleaning solutions for customers who require a one-off clean as well as those looking for regular household cleaning appointments.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-2xl border border-gold/10 overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left gap-4">
+          <span class="font-semibold text-brown-dark text-sm md:text-base">Do you provide end of tenancy cleaning for landlords and tenants?</span>
+          <i class="fa-solid fa-plus faq-icon text-gold flex-shrink-0"></i>
+        </button>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-brown text-sm leading-relaxed font-medium">Yes. Our end of tenancy cleaning service is suitable for tenants preparing to move out and landlords preparing properties for new occupants.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-2xl border border-gold/10 overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left gap-4">
+          <span class="font-semibold text-brown-dark text-sm md:text-base">Are your cleaners insured and background-checked?</span>
+          <i class="fa-solid fa-plus faq-icon text-gold flex-shrink-0"></i>
+        </button>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-brown text-sm leading-relaxed font-medium">Our cleaning staff are fully insured, vetted and background-checked, helping provide peace of mind when arranging cleaning services for your property.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-2xl border border-gold/10 overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left gap-4">
+          <span class="font-semibold text-brown-dark text-sm md:text-base">How can I book a cleaning service?</span>
+          <i class="fa-solid fa-plus faq-icon text-gold flex-shrink-0"></i>
+        </button>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-brown text-sm leading-relaxed font-medium">You can contact Lume Clean Limited by phone, text or email to discuss your property, cleaning requirements and preferred appointment time. We'll get back to you quickly.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     CONTACT / CTA SECTION
+══════════════════════════════════ -->
+<section id="contact" class="py-20 bg-cream">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <!-- Left: info -->
+      <div>
+        <p class="text-gold-bright font-semibold text-xs tracking-[0.18em] uppercase mb-3">Contact Us</p>
+        <h2 class="font-bold text-brown-dark leading-tight mb-5" style="font-family:'Cormorant Garamond',serif; font-size: clamp(1.9rem,3.5vw,2.6rem);">
+          Book a Professional<br/><em class="not-italic gold-text">Cleaner Today</em>
+        </h2>
+        <p class="text-brown text-base leading-relaxed mb-8">
+          Get in touch to discuss your requirements and request a cleaning quote. Whether you need regular home cleaning, a one-off deep clean or anything in between — we're here to help.
+        </p>
+
+        <div class="space-y-4 mb-8">
+          <a href="tel:07522049953" class="flex items-center gap-4 group">
+            <div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold transition-colors flex-shrink-0">
+              <i class="fa-solid fa-phone text-gold group-hover:text-white transition-colors"></i>
+            </div>
+            <div>
+              <p class="text-xs text-brown/50 font-medium uppercase tracking-wide">Call / Text</p>
+              <p class="text-brown-dark font-semibold">07522 049 953</p>
+            </div>
+          </a>
+          <a href="mailto:hello@lumeclean.co.uk" class="flex items-center gap-4 group">
+            <div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold transition-colors flex-shrink-0">
+              <i class="fa-solid fa-envelope text-gold group-hover:text-white transition-colors"></i>
+            </div>
+            <div>
+              <p class="text-xs text-brown/50 font-medium uppercase tracking-wide">Email</p>
+              <p class="text-brown-dark font-semibold">hello@lumeclean.co.uk</p>
+            </div>
+          </a>
+          <div class="flex items-center gap-4">
+            <div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-location-dot text-gold"></i>
+            </div>
+            <div>
+              <p class="text-xs text-brown/50 font-medium uppercase tracking-wide">Location</p>
+              <p class="text-brown-dark font-semibold">Dagenham, East London</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- area coverage tags -->
+        <div>
+          <p class="text-xs text-brown/50 font-semibold uppercase tracking-wide mb-3">Areas We Cover</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-white border border-gold/20 text-brown/70 text-xs px-3 py-1.5 rounded-full">Dagenham</span>
+            <span class="bg-white border border-gold/20 text-brown/70 text-xs px-3 py-1.5 rounded-full">Barking</span>
+            <span class="bg-white border border-gold/20 text-brown/70 text-xs px-3 py-1.5 rounded-full">Romford</span>
+            <span class="bg-white border border-gold/20 text-brown/70 text-xs px-3 py-1.5 rounded-full">Ilford</span>
+            <span class="bg-white border border-gold/20 text-brown/70 text-xs px-3 py-1.5 rounded-full">East London</span>
+            <span class="bg-white border border-gold/20 text-brown/70 text-xs px-3 py-1.5 rounded-full">Stratford</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="bg-white rounded-2xl shadow-md border border-gold/10 p-7 md:p-8">
+        <h3 class="font-bold text-brown-dark mb-1 text-xl" style="font-family:'Cormorant Garamond',serif;">Send Us Your Details</h3>
+        <p class="text-brown text-sm mb-6">We'll get back to you within 24 hours.</p>
+
+        <div class="space-y-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-brown/60 uppercase tracking-wide mb-1.5">First Name</label>
+              <input type="text" placeholder="Jane" class="w-full border border-gold/20 rounded-xl px-4 py-2.5 text-sm text-brown-dark placeholder-brown/30 focus:outline-none focus:border-gold transition-colors bg-cream/40" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-brown/60 uppercase tracking-wide mb-1.5">Last Name</label>
+              <input type="text" placeholder="Smith" class="w-full border border-gold/20 rounded-xl px-4 py-2.5 text-sm text-brown-dark placeholder-brown/30 focus:outline-none focus:border-gold transition-colors bg-cream/40" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-brown/60 uppercase tracking-wide mb-1.5">Phone Number</label>
+            <input type="tel" placeholder="07xxx xxx xxx" class="w-full border border-gold/20 rounded-xl px-4 py-2.5 text-sm text-brown-dark placeholder-brown/30 focus:outline-none focus:border-gold transition-colors bg-cream/40" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-brown/60 uppercase tracking-wide mb-1.5">Email Address</label>
+            <input type="email" placeholder="jane@example.com" class="w-full border border-gold/20 rounded-xl px-4 py-2.5 text-sm text-brown-dark placeholder-brown/30 focus:outline-none focus:border-gold transition-colors bg-cream/40" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-brown/60 uppercase tracking-wide mb-1.5">Service Required</label>
+            <select class="w-full border border-gold/20 rounded-xl px-4 py-2.5 text-sm text-brown-dark focus:outline-none focus:border-gold transition-colors bg-cream/40 appearance-none">
+              <option value="">Select a service...</option>
+              <option>Regular Home Cleaning</option>
+              <option>Deep Cleaning</option>
+              <option>End of Tenancy Cleaning</option>
+              <option>Office Cleaning</option>
+              <option>Airbnb Changeover Cleaning</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-brown/60 uppercase tracking-wide mb-1.5">Message</label>
+            <textarea rows="3" placeholder="Tell us about your property and cleaning needs..." class="w-full border border-gold/20 rounded-xl px-4 py-2.5 text-sm text-brown-dark placeholder-brown/30 focus:outline-none focus:border-gold transition-colors bg-cream/40 resize-none"></textarea>
+          </div>
+          <button class="btn-gold w-full py-3.5 text-sm">Send My Details <i class="fa-solid fa-paper-plane ml-1.5 text-xs"></i></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer class="bg-brown-dark text-cream/75">
+  <div class="footer-divider"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <span class="gold-text leading-none" style="font-family:'Great Vibes',cursive; font-size:2rem;">Lume Clean</span>
+        <p class="text-sm leading-relaxed text-cream/80 mt-3 mb-5">Professional cleaning services for homes, rental properties and businesses across Dagenham and East London.</p>
+        <p class="text-xs text-cream/60">Sister company of DSM City Construction Ltd<br/>7+ years of trusted local service.</p>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="text-cream font-bold text-base mb-4 pb-2 border-b border-gold/25" style="font-family:'Cormorant Garamond',serif;">Our Services</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#services" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-gold/60"></i>Regular Home Cleaning</a></li>
+          <li><a href="#services" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-gold/60"></i>Deep Cleaning</a></li>
+          <li><a href="#services" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-gold/60"></i>End of Tenancy Cleaning</a></li>
+          <li><a href="#services" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-gold/60"></i>Office Cleaning</a></li>
+          <li><a href="#services" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-gold/60"></i>Airbnb Changeover</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-cream font-bold text-base mb-4 pb-2 border-b border-gold/25" style="font-family:'Cormorant Garamond',serif;">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-gold/60"></i>Home</a></li>
+          <li><a href="#about" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-gold/60"></i>About Us</a></li>
+          <li><a href="#pricing" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-gold/60"></i>Pricing</a></li>
+          <li><a href="#faq" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-gold/60"></i>FAQs</a></li>
+          <li><a href="#contact" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-gold/60"></i>Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-cream font-bold text-base mb-4 pb-2 border-b border-gold/25" style="font-family:'Cormorant Garamond',serif;">Get in Touch</h3>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-phone text-gold mt-0.5 flex-shrink-0 text-xs"></i>
+            <a href="tel:07522049953" class="hover:text-gold transition-colors">07522 049 953</a>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-envelope text-gold mt-0.5 flex-shrink-0 text-xs"></i>
+            <a href="mailto:hello@lumeclean.co.uk" class="hover:text-gold transition-colors">hello@lumeclean.co.uk</a>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-location-dot text-gold mt-0.5 flex-shrink-0 text-xs"></i>
+            <span>Dagenham, East London</span>
+          </li>
+        </ul>
+        <a href="#contact" class="btn-gold inline-block mt-5 px-5 py-2.5 text-sm w-full text-center">Get a Free Quote</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-cream/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-cream/60">
+      <p>© 2025 Lume Clean Limited. All rights reserved.</p>
+      <p>Sister company of <span class="text-gold/60">DSM City Construction Ltd</span></p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamIcon = document.getElementById('ham-icon');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    hamIcon.classList.toggle('fa-bars');
+    hamIcon.classList.toggle('fa-xmark');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamIcon.classList.add('fa-bars');
+      hamIcon.classList.remove('fa-xmark');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-btn').forEach(b => {
+        b.classList.remove('open');
+        b.nextElementSibling.classList.remove('open');
+      });
+      // toggle clicked
+      if (!isOpen) {
+        btn.classList.add('open');
+        answer.classList.add('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
