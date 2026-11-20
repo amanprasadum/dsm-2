@@ -909,9 +909,9 @@
 ══════════════════════════════════ -->
 <section id="contact" class="py-20 bg-cream">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-      <!-- Left: info -->
+    <!-- Contact introduction: content left, image right -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
       <div>
         <p class="text-gold-bright font-semibold text-xs tracking-[0.18em] uppercase mb-3">Contact Us</p>
         <h2 class="font-bold text-brown-dark leading-tight mb-5" style="font-family:'Cormorant Garamond',serif; font-size: clamp(1.9rem,3.5vw,2.6rem);">
@@ -941,7 +941,7 @@
             </div>
           </a>
           <div class="flex items-center gap-4">
-            <div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+            <div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold transition-colors flex-shrink-0">
               <i class="fa-solid fa-location-dot text-gold"></i>
             </div>
             <div>
@@ -951,12 +951,6 @@
           </div>
         </div>
 
-        <!-- supplies image -->
-        <div class="mb-7">
-          <img src="supplies1.png" alt="Professional cleaning supplies" class="w-48 object-contain drop-shadow-md" />
-        </div>
-
-        <!-- area coverage tags -->
         <div>
           <p class="text-xs text-brown/50 font-semibold uppercase tracking-wide mb-3">Areas We Cover</p>
           <div class="flex flex-wrap gap-2">
@@ -970,7 +964,13 @@
         </div>
       </div>
 
-      <!-- Right: form -->
+      <div class="flex justify-center lg:justify-end">
+        <img src="supplies1.png" alt="Professional cleaning supplies" class="w-full max-w-md h-auto object-contain" />
+      </div>
+    </div>
+
+    <!-- Contact form left, Google Map right -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
       <div class="bg-white rounded-2xl shadow-md border border-gold/10 p-7 md:p-8">
         <h3 class="font-bold text-brown-dark mb-1 text-xl" style="font-family:'Cormorant Garamond',serif;">Send Us Your Details</h3>
         <p class="text-brown text-sm mb-6">We'll get back to you within 24 hours.</p>
@@ -1013,7 +1013,20 @@
         </div>
       </div>
 
+      <div class="w-full min-h-[420px] lg:min-h-full overflow-hidden rounded-2xl">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1263476.5070309527!2d-0.6935916308684861!3d51.79286546742638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8be0d5ac2234bff9%3A0xba4f16a32711cc27!2sLume%20clean%20LTD!5e0!3m2!1sen!2sin!4v1795064410107!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style="border:0; min-height:420px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="Lume Clean LTD location map">
+        </iframe>
+      </div>
     </div>
+
   </div>
 </section>
 
