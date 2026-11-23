@@ -533,11 +533,36 @@
 </section>
 
 <!-- Decorative separator between local company and services sections -->
+<style>
+  .lume-sparkle-divider { position:relative; isolation:isolate; }
+  .lume-sparkle-core { position:relative; z-index:2; animation:lume-sparkle-pulse 2.8s ease-in-out infinite; }
+  .lume-sparkle-particle { position:absolute; left:50%; top:50%; z-index:1; width:4px; height:4px; border-radius:50%; background:#C9941A; opacity:0; pointer-events:none; box-shadow:0 0 7px rgba(201,148,26,.55); animation:lume-particle-rise 2.4s ease-out infinite; }
+  .lume-sparkle-particle:nth-child(2) { --drift:-17px; animation-delay:0s; }
+  .lume-sparkle-particle:nth-child(3) { --drift:13px; animation-delay:.6s; }
+  .lume-sparkle-particle:nth-child(4) { --drift:-8px; animation-delay:1.2s; }
+  .lume-sparkle-particle:nth-child(5) { --drift:20px; animation-delay:1.8s; }
+  @keyframes lume-sparkle-pulse {
+    0%,100% { transform:scale(1); text-shadow:0 0 0 rgba(201,148,26,0); }
+    50% { transform:scale(1.16); text-shadow:0 0 10px rgba(201,148,26,.5); }
+  }
+  @keyframes lume-particle-rise {
+    0% { transform:translate(-50%,-15%) scale(.45); opacity:0; }
+    18% { opacity:.9; }
+    100% { transform:translate(calc(-50% + var(--drift)), -27px) scale(0); opacity:0; }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    .lume-sparkle-core,.lume-sparkle-particle { animation:none; }
+  }
+</style>
 <div class="bg-cream-dark py-5" aria-hidden="true">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-5">
     <div class="h-px flex-1" style="background:linear-gradient(90deg,transparent,rgba(201,148,26,0.55));"></div>
-    <div class="w-10 h-10 rounded-full flex items-center justify-center border" style="border-color:rgba(201,148,26,0.4);background:rgba(201,148,26,0.08);">
-      <span class="text-gold text-xl leading-none" aria-hidden="true">✦</span>
+    <div class="lume-sparkle-divider w-10 h-10 rounded-full flex items-center justify-center border" style="border-color:rgba(201,148,26,0.4);background:rgba(201,148,26,0.08);">
+      <span class="lume-sparkle-core text-gold text-xl leading-none" aria-hidden="true">✦</span>
+      <span class="lume-sparkle-particle"></span>
+      <span class="lume-sparkle-particle"></span>
+      <span class="lume-sparkle-particle"></span>
+      <span class="lume-sparkle-particle"></span>
     </div>
     <div class="h-px flex-1" style="background:linear-gradient(90deg,rgba(201,148,26,0.55),transparent);"></div>
   </div>
